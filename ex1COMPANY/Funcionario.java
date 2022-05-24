@@ -1,4 +1,4 @@
-package ex5COMPANY;
+package ex1COMPANY;
 import java.util.Scanner;
 
 public class Funcionario {

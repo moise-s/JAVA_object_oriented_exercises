@@ -1,4 +1,4 @@
-package ex5COMPANY;
+package ex1COMPANY;
 
 public class Holerite {
 
