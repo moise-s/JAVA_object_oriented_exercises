@@ -1,4 +1,5 @@
 package ex5COMPANY;
+
 import java.util.Scanner;
 
 public class Main {
@@ -31,5 +32,6 @@ public class Main {
 
     System.out.println(funcionario1);
     System.out.println("Obrigado por usar o programa!");
+    input.close();
   }
 }
