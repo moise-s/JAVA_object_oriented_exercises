@@ -1,3 +1,6 @@
+// Utilizando como base sua resolução ao Exercício 5 (Empresa com 10 funcionários), ou o criado em aula e disponibilizado em Gist - Exercício 5, (Links para um site externo.) adapte a solução aplicando os conceitos de OO aprendidos até agora.
+// Sugestão: Criar classes Funcionario e Holerite
+
 package ex5COMPANY;
 
 import java.util.Scanner;
