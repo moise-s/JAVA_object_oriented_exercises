@@ -1,3 +1,4 @@
+package ex5COMPANY;
 import java.util.Scanner;
 
 public class Main {
