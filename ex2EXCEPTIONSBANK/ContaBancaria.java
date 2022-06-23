@@ -4,6 +4,11 @@ public class ContaBancaria {
   private double saldo; // Determina o saldo da conta.
   private double limite; // Determina o limite de crédito do cheque especial.
 
+  @Override
+  public String toString() {
+    return "ContaBancaria [limite=" + limite + ", saldo=" + saldo + "]";
+  }
+
   // Construtor padrão da classe.
   public ContaBancaria(double valorSaldo, double valorLimite) {
     this.saldo = valorSaldo;
@@ -22,6 +27,7 @@ public class ContaBancaria {
 
   // Retorna o saldo da conta somado ao limite.
   public double getSaldoComLimite() {
+    return this.saldo + this.limite;
   }
 
   // Deve decrementar o valor do saque da Conta. Retorna "true" caso a operação
@@ -29,17 +35,24 @@ public class ContaBancaria {
   // considerar o limite).
   public boolean sacar(double valor) throws ContaException {
     if (valor < 500 && valor <= (this.saldo + this.limite)) {
+      if (valor < this.saldo) {
+        this.saldo -= valor;
+      } else {
+        this.limite = this.limite + this.saldo - valor;
+        this.saldo = 0;
+      }
       return true;
+    } else if (valor >= 500) {
+      throw new ContaException("ERRO: valor de saque muito alto");
     } else {
-      // CORRIGIR AQUI
-      return false;
+      throw new ContaException("ERRO: saldo não suficiente para a operação");
     }
   }
 
   // Deve incrementar o valor a Conta.
   public void depositar(double valor) throws ContaException {
     if (valor > 1000) {
-      // CORRIGIR AQUI throw new ContaException
+      throw new ContaException("ERRO: não é possível depositar mais de R$1000.");
     } else {
       this.saldo += valor;
     }
